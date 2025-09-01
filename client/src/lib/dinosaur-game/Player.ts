@@ -55,19 +55,32 @@ export class Player {
   render(ctx: CanvasRenderingContext2D): void {
     ctx.save();
     
-    // Draw dinosaur body
+    // Add glow effect
+    ctx.shadowColor = '#9CA3AF';
+    ctx.shadowBlur = 15;
+    ctx.shadowOffsetX = 0;
+    ctx.shadowOffsetY = 0;
+    
+    // Draw dinosaur body with glow
     ctx.fillStyle = '#4a5568';
     ctx.fillRect(this.x, this.y - this.height, this.width, this.height);
     
-    // Draw dinosaur head
+    // Draw dinosaur head with glow
     ctx.fillStyle = '#2d3748';
     ctx.fillRect(this.x + 25, this.y - this.height - 15, 20, 20);
+    
+    // Reset shadow for eye (don't want glowing eye)
+    ctx.shadowBlur = 0;
     
     // Draw eye
     ctx.fillStyle = '#fff';
     ctx.fillRect(this.x + 35, this.y - this.height - 10, 6, 6);
     ctx.fillStyle = '#000';
     ctx.fillRect(this.x + 37, this.y - this.height - 8, 2, 2);
+    
+    // Restore glow for legs and tail
+    ctx.shadowColor = '#9CA3AF';
+    ctx.shadowBlur = 10;
     
     // Draw legs (animated when running)
     ctx.fillStyle = '#4a5568';
