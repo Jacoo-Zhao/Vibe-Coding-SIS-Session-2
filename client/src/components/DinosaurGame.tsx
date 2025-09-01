@@ -41,6 +41,10 @@ export const DinosaurGame: React.FC<DinosaurGameProps> = ({
           setIsGameStarted(true);
           gameRef.current?.start();
           console.log('Game started!');
+        } else if (gameRef.current?.isGameOverState()) {
+          // 游戏结束时重新开始
+          gameRef.current?.start();
+          console.log('Game restarted!');
         } else {
           gameRef.current?.jump();
           console.log('Jump triggered!');
@@ -74,11 +78,11 @@ export const DinosaurGame: React.FC<DinosaurGameProps> = ({
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-blue-300 to-blue-100">
       <div className="mb-4 text-center">
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">Chrome Dinosaur Game</h1>
+        <h1 className="text-3xl font-bold text-gray-800 mb-2">谷歌恐龙游戏</h1>
         {!isGameStarted ? (
-          <p className="text-lg text-gray-600">Press SPACEBAR to start</p>
+          <p className="text-lg text-gray-600">按空格键开始游戏</p>
         ) : (
-          <p className="text-lg text-gray-600">Press SPACEBAR to jump</p>
+          <p className="text-lg text-gray-600">按空格键跳跃，避开仙人掌障碍物！</p>
         )}
       </div>
       
@@ -94,7 +98,7 @@ export const DinosaurGame: React.FC<DinosaurGameProps> = ({
       
       <div className="mt-4 text-center">
         <p className="text-sm text-gray-500">
-          Simple dinosaur running game - avoid obstacles by jumping!
+          简单的恐龙跑酷游戏 - 跳跃避开仙人掌障碍物！
         </p>
       </div>
     </div>
