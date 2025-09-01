@@ -95,15 +95,15 @@ export class Game {
     // Score
     this.ctx.fillStyle = '#333';
     this.ctx.font = '20px Arial';
-    this.ctx.fillText(`得分: ${Math.floor(this.score)}`, this.width - 150, 30);
+    this.ctx.fillText(`Score: ${Math.floor(this.score)}`, this.width - 150, 30);
     
     // Game speed indicator
     this.ctx.font = '16px Arial';
-    this.ctx.fillText(`速度: ${this.gameSpeed.toFixed(1)}`, 10, 30);
+    this.ctx.fillText(`Speed: ${this.gameSpeed.toFixed(1)}`, 10, 30);
     
     // Player state debug info
     const playerState = this.player.isJumping() ? 'Jumping' : 'Running';
-    this.ctx.fillText(`状态: ${playerState}`, 10, 50);
+    this.ctx.fillText(`State: ${playerState}`, 10, 50);
   }
 
   private updateObstacles(deltaTime: number): void {
@@ -154,15 +154,15 @@ export class Game {
     this.ctx.fillStyle = '#fff';
     this.ctx.font = '48px Arial';
     this.ctx.textAlign = 'center';
-    this.ctx.fillText('游戏结束!', this.width / 2, this.height / 2 - 60);
+    this.ctx.fillText('Game Over!', this.width / 2, this.height / 2 - 60);
     
     // Final score
     this.ctx.font = '24px Arial';
-    this.ctx.fillText(`最终得分: ${Math.floor(this.score)}`, this.width / 2, this.height / 2 - 20);
+    this.ctx.fillText(`Final Score: ${Math.floor(this.score)}`, this.width / 2, this.height / 2 - 20);
     
     // Restart instruction
     this.ctx.font = '18px Arial';
-    this.ctx.fillText('按空格键重新开始', this.width / 2, this.height / 2 + 20);
+    this.ctx.fillText('Press SPACEBAR to restart', this.width / 2, this.height / 2 + 20);
     
     // Reset text align
     this.ctx.textAlign = 'left';
