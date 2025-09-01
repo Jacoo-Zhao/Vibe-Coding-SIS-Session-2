@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Google Dinosaur Game - A fun Chrome-inspired endless runner game with jumping dinosaur avoiding cactus obstacles" />
+    <meta name="keywords" content="dinosaur game, chrome dinosaur, endless runner, browser game, jumping game" />
+    <meta name="author" content="Personal Deployment" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Google Dinosaur Game" />
+    <meta property="og:description" content="Play the classic Chrome dinosaur game! Jump over cacti and survive as long as you can." />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Google Dinosaur Game" />
+    <meta property="twitter:description" content="Play the classic Chrome dinosaur game! Jump over cacti and survive as long as you can." />
+    
+    <title>Google Dinosaur Game - Chrome Dino Runner</title>
+    
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+        background: linear-gradient(to bottom, #93c5fd, #dbeafe);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .container {
+        text-align: center;
+        padding: 2rem;
+        max-width: 1000px;
+        width: 100%;
+      }
+      
+      .title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #1f2937;
+        margin-bottom: 1rem;
+      }
+      
+      .description {
+        font-size: 1.125rem;
+        color: #4b5563;
+        margin-bottom: 2rem;
+      }
+      
+      .game-container {
+        border: 4px solid #1f2937;
+        border-radius: 0.5rem;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        background: white;
+        margin: 0 auto 2rem;
+        display: inline-block;
+      }
+      
+      .instructions {
+        font-size: 0.875rem;
+        color: #6b7280;
+        margin-top: 1rem;
+      }
+      
+      .features {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        text-align: left;
+      }
+      
+      .feature {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      
+      .feature h3 {
+        color: #1f2937;
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+      
+      .feature p {
+        color: #4b5563;
+        font-size: 0.875rem;
+      }
+      
+      @media (max-width: 768px) {
+        .title {
+          font-size: 2rem;
+        }
+        
+        .game-container {
+          border-width: 2px;
+        }
+        
+        .features {
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Google Dinosaur Game</h1>
+      <p class="description">Press SPACEBAR to start the game and jump over obstacles!</p>
+      
+      <div class="game-container">
+        <div id="root"></div>
+      </div>
+      
+      <p class="instructions">
+        Simple dinosaur running game - jump to avoid cactus obstacles!
+      </p>
+      
+      <div class="features">
+        <div class="feature">
+          <h3>🦕 Glowing Dinosaur</h3>
+          <p>Play as a dinosaur with cool gray glow effects that make it stand out</p>
+        </div>
+        
+        <div class="feature">
+          <h3>🌵 Varied Obstacles</h3>
+          <p>Three types of cacti with different heights and sizes to challenge you</p>
+        </div>
+        
+        <div class="feature">
+          <h3>📈 Progressive Difficulty</h3>
+          <p>Game speed increases over time and obstacles spawn more frequently</p>
+        </div>
+        
+        <div class="feature">
+          <h3>🎮 Simple Controls</h3>
+          <p>Just use the spacebar to jump - easy to learn, hard to master</p>
+        </div>
+      </div>
+    </div>
+    
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
